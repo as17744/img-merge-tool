@@ -1,0 +1,32 @@
+{
+  "name": "rgg_img_edit",
+  "version": "1.0.0",
+  "description": "图片编辑下载保存",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node_modules/.bin/webpack --config ./bin/webpack.config.js --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa-static": "^5.0.0",
+    "koa2": "^2.0.0-alpha.7",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router": "^5.2.0",
+    "react-router-config": "^5.1.1",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^4.2.1",
+    "less-loader": "^6.2.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}

@@ -1,5 +1,6 @@
 import App from './App';
 import SingleUpload from './SingleUpload';
+import SingleEdit from './SingleEdit';
 
 export default [
     {
@@ -10,5 +11,9 @@ export default [
     {
         path: '/single/upload',
         component: SingleUpload,
+    },
+    {
+        path: '/single/edit',
+        component: SingleEdit,
     }
 ];

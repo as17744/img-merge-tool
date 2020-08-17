@@ -1,5 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { setImage } from '@redux/action';
 import styles from './style.less';
+
+const mapStateToProps = (state) => {
+    return {
+        ...state,
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setImage: (url) => {
+            dispatch(setImage(url));
+        }
+    };
+};
 
 class App extends React.Component {
     constructor(props) {
@@ -8,6 +24,15 @@ class App extends React.Component {
             uploaded: '',
         };
         this.myRef = React.createRef();
+    }
+    confirmImg() {
+        const {
+            setImage,
+            history,
+        } = this.props;
+        const { uploaded } = this.state;
+        setImage(uploaded);
+        history.push('/single/edit');
     }
     fileSelect() {
         this.myRef.current.click();
@@ -39,7 +64,7 @@ class App extends React.Component {
                         <div>
                             <img src={uploaded} className={styles.uploadedImg} />
                             <div className={styles.checkButtons}>
-                                <div className={styles.confirm}>确认</div>
+                                <div className={styles.confirm} onClick={() => { this.confirmImg() }}>确认</div>
                                 <div className={styles.cancel} onClick={() => { this.setState({ uploaded: '' }) }}>取消</div>
                             </div>
                         </div>
@@ -57,4 +82,4 @@ class App extends React.Component {
     };
 };
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);

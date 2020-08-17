@@ -1,6 +1,5 @@
 var path = require('path');
 
-var APP_DIR = path.resolve(__dirname, 'src');
 var BUILD_DIR = path.resolve(__dirname, '../build');
 console.log(__dirname);
 var config = {
@@ -34,6 +33,9 @@ var config = {
   resolve: {
     extensions: [".js", '.jsx'],
     mainFiles: ['index'],
+    alias: {
+      '@redux': path.resolve(__dirname, '../redux'),
+    },
   },
 };
 

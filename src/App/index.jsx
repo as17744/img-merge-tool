@@ -2,8 +2,11 @@ import React from 'react';
 import styles from './style.less';
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+    }
     goUpload() {
-        console.log(123);
+        this.props.history.push('/single/upload');
     }
     render () {
         return (

@@ -11,4 +11,42 @@
             cursor: pointer;
         }
     }
+    .uploadUnput {
+        display: none;
+    }
+    .imgWrapper {
+        width: 280px;
+    }
+    .uploadedImg {
+        width: 300px;
+        display: block;
+    }
+    .checkButtons {
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .confirm {
+            border-radius: 8px;
+            padding: 10px 20px;
+            background-color: #890889;
+            color: #fff;
+            font-size: 15px;
+            margin-right: 10px;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        .cancel {
+            border-radius: 8px;
+            padding: 10px 20px;
+            color: #333;
+            font-size: 15px;
+            border: 1px solid #8f8f8f;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
 }

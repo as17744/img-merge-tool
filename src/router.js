@@ -4,6 +4,7 @@ import SingleUpload from './SingleUpload';
 export default [
     {
         path: '/',
+        exact: true,
         component: App
     },
     {

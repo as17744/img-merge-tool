@@ -1,0 +1,177 @@
+{
+  "id": "687429",
+  "name": "richText",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5337156",
+      "name": "personnel_courier",
+      "font_class": "personnel_courier",
+      "unicode": "e69d",
+      "unicode_decimal": 59037
+    },
+    {
+      "icon_id": "8348163",
+      "name": "下载",
+      "font_class": "xiazai",
+      "unicode": "e723",
+      "unicode_decimal": 59171
+    },
+    {
+      "icon_id": "431848",
+      "name": "link",
+      "font_class": "link",
+      "unicode": "e746",
+      "unicode_decimal": 59206
+    },
+    {
+      "icon_id": "1287718",
+      "name": "video",
+      "font_class": "video",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "2658317",
+      "name": "居中",
+      "font_class": "juzhong1",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "1167102",
+      "name": "居中",
+      "font_class": "juzhong",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "4102596",
+      "name": "靠右",
+      "font_class": "kaoyou",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "4214591",
+      "name": "close",
+      "font_class": "close",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "2678629",
+      "name": "上传",
+      "font_class": "shangchuan",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
+      "icon_id": "883260",
+      "name": "字母_b",
+      "font_class": "zimub",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "883266",
+      "name": "字母_h",
+      "font_class": "zimuh",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "883280",
+      "name": "字母_t",
+      "font_class": "zimut",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    },
+    {
+      "icon_id": "1031387",
+      "name": "毛笔",
+      "font_class": "maobi",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "2313749",
+      "name": "铅笔",
+      "font_class": "bianji",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "2402088",
+      "name": "商品",
+      "font_class": "shangpin",
+      "unicode": "e68b",
+      "unicode_decimal": 59019
+    },
+    {
+      "icon_id": "2591223",
+      "name": "对齐",
+      "font_class": "duiqi",
+      "unicode": "e642",
+      "unicode_decimal": 58946
+    },
+    {
+      "icon_id": "2739771",
+      "name": "照片",
+      "font_class": "zhaopian",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "3223133",
+      "name": "前进 后退",
+      "font_class": "tubiaozhizuo--",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "3400201",
+      "name": "at",
+      "font_class": "at",
+      "unicode": "e952",
+      "unicode_decimal": 59730
+    },
+    {
+      "icon_id": "3930490",
+      "name": "照片",
+      "font_class": "zhaopian1",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "4286516",
+      "name": "话题",
+      "font_class": "huati",
+      "unicode": "e69c",
+      "unicode_decimal": 59036
+    },
+    {
+      "icon_id": "4316988",
+      "name": "笑脸",
+      "font_class": "xiaolian",
+      "unicode": "e64c",
+      "unicode_decimal": 58956
+    },
+    {
+      "icon_id": "4513220",
+      "name": "心得",
+      "font_class": "xinde",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "4720122",
+      "name": "前进 后退",
+      "font_class": "tubiaozhizuo--1",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    }
+  ]
+}

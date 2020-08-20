@@ -21,17 +21,30 @@ class SingleEdit extends React.Component {
     download() {
         const $img = document.getElementById('J-img');
         if ($img) {
-            domtoimage.toBlob($img).then(function (blob) {
+            const rect = $img.getBoundingClientRect();
+            const {
+                width,
+            } = rect;
+            // $img.style.width = `auto`;
+            domtoimage.toBlob($img, {
+                quality: 1,
+            }).then(function (blob) {
                 const form = new FormData();
-                form.append('filetitle', `${Math.floor(10000000 * Math.random())}.png`);
                 form.append('filedata', blob);
                 fetch('/api/upload', {
                     method: "POST",
                     body: form,
                 }).then((response) => response.json()).then((res) => {
-                    console.log(res);
+                    const { url, name } = res;
+                    const eleLink = document.createElement('a');
+                    eleLink.download = name;
+                    eleLink.style.display = 'none';
+                    eleLink.href = url;
+                    document.body.appendChild(eleLink);
+                    eleLink.click();
+                    document.body.removeChild(eleLink);
                 });
-                // FileSaver.saveAs(blob, 'my-node.png');
+                // FileSaver.saveAs(blob, 'my-node.jpeg');
             });
         }
     }

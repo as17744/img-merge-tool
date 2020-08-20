@@ -19,7 +19,9 @@ var config = {
           use: ['style-loader', {
             loader: 'css-loader',
             options: {
-              modules: true,
+              modules:{
+                localIdentName: "[path][name]-[local]-[hash:5]",
+              }
             }
           }, 'less-loader'],
           exclude: /node_modules/

@@ -1,5 +1,5 @@
 import React from 'react';
-import FileSaver from 'file-saver';
+import html2canvas from 'html2canvas';
 import { connect } from 'react-redux';
 import domtoimage from 'dom-to-image';
 import styles from './style.less';
@@ -21,31 +21,30 @@ class SingleEdit extends React.Component {
     download() {
         const $img = document.getElementById('J-img');
         if ($img) {
-            const rect = $img.getBoundingClientRect();
-            const {
-                width,
-            } = rect;
-            // $img.style.width = `auto`;
-            domtoimage.toBlob($img, {
-                quality: 1,
-            }).then(function (blob) {
-                const form = new FormData();
-                form.append('filedata', blob);
-                fetch('/api/upload', {
-                    method: "POST",
-                    body: form,
-                }).then((response) => response.json()).then((res) => {
-                    const { url, name } = res;
-                    const eleLink = document.createElement('a');
-                    eleLink.download = name;
-                    eleLink.style.display = 'none';
-                    eleLink.href = url;
-                    document.body.appendChild(eleLink);
-                    eleLink.click();
-                    document.body.removeChild(eleLink);
-                });
-                // FileSaver.saveAs(blob, 'my-node.jpeg');
+            html2canvas($img, {useCORS: true}).then((canvas) => {
+                const imgUri = canvas.toDataURL();
+                console.log(imgUri);
             });
+            // domtoimage.toBlob($img, {
+            //     quality: 1,
+            // }).then(function (blob) {
+            //     const form = new FormData();
+            //     form.append('filedata', blob);
+            //     fetch('/api/upload', {
+            //         method: "POST",
+            //         body: form,
+            //     }).then((response) => response.json()).then((res) => {
+            //         const { url, name } = res;
+            //         const eleLink = document.createElement('a');
+            //         eleLink.download = name;
+            //         eleLink.style.display = 'none';
+            //         eleLink.href = url;
+            //         document.body.appendChild(eleLink);
+            //         eleLink.click();
+            //         document.body.removeChild(eleLink);
+            //     });
+            //     // FileSaver.saveAs(blob, 'my-node.jpeg');
+            // });
         }
     }
     changePadding(e, type) {

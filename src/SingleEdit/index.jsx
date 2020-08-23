@@ -1,8 +1,23 @@
 import React from 'react';
 import html2canvas from 'html2canvas';
 import { connect } from 'react-redux';
-import domtoimage from 'dom-to-image';
 import styles from './style.less';
+
+const dataURLtoBlob = (dataurl) => {
+    const arr = dataurl.split(',');
+     //注意base64的最后面中括号和引号是不转译的   
+    const _arr = arr[1].substring(0,arr[1].length-2);
+    const mime = arr[0].match(/:(.*?);/)[1];
+    const bstr = atob(_arr);
+    let n = bstr.length;
+    const u8arr = new Uint8Array(n);
+     while (n--) {
+         u8arr[n] = bstr.charCodeAt(n);
+     }
+     return new Blob([u8arr], {
+         type: mime
+     });
+ };
 
 const mapStateToProps = (state) => {
     return {
@@ -14,8 +29,8 @@ class SingleEdit extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            verticalPadding: 80,
-            horizontalPadding: 50,
+            verticalPadding: 30,
+            horizontalPadding: 20,
         };
     }
     download() {
@@ -23,28 +38,23 @@ class SingleEdit extends React.Component {
         if ($img) {
             html2canvas($img, {useCORS: true}).then((canvas) => {
                 const imgUri = canvas.toDataURL();
-                console.log(imgUri);
+                const blob = dataURLtoBlob(imgUri); // base64转blob
+                const form = new FormData();
+                form.append('filedata', blob);
+                fetch('/api/upload', {
+                    method: "POST",
+                    body: form,
+                }).then((response) => response.json()).then((res) => {
+                    const { url, name } = res;
+                    const eleLink = document.createElement('a');
+                    eleLink.download = name;
+                    eleLink.style.display = 'none';
+                    eleLink.href = url;
+                    document.body.appendChild(eleLink);
+                    eleLink.click();
+                    document.body.removeChild(eleLink);
+                });
             });
-            // domtoimage.toBlob($img, {
-            //     quality: 1,
-            // }).then(function (blob) {
-            //     const form = new FormData();
-            //     form.append('filedata', blob);
-            //     fetch('/api/upload', {
-            //         method: "POST",
-            //         body: form,
-            //     }).then((response) => response.json()).then((res) => {
-            //         const { url, name } = res;
-            //         const eleLink = document.createElement('a');
-            //         eleLink.download = name;
-            //         eleLink.style.display = 'none';
-            //         eleLink.href = url;
-            //         document.body.appendChild(eleLink);
-            //         eleLink.click();
-            //         document.body.removeChild(eleLink);
-            //     });
-            //     // FileSaver.saveAs(blob, 'my-node.jpeg');
-            // });
         }
     }
     changePadding(e, type) {

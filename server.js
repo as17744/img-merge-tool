@@ -6,6 +6,8 @@ const router = require('./server/router');
 
 const app = new Koa();
 
+const port = 80;
+
 app.use(bodyParser());
 
 app.use(router.routes());
@@ -25,6 +27,6 @@ app.use(async(ctx, next) => {
     next();
 });
 
-app.listen(8080, () => {
-    console.log('Server is running at 8080');
+app.listen(port, () => {
+    console.log(`Server is running at ${port}`);
 });

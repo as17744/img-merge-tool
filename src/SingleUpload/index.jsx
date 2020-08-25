@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setImage } from '@redux/action';
+import Back from '@components/Back';
 import styles from './style.less';
 
 const mapStateToProps = (state) => {
@@ -77,6 +78,7 @@ class App extends React.Component {
                     type="file"
                     className={styles.uploadUnput}
                 />
+                <Back history={this.props.history} />
             </div>
         );
     };

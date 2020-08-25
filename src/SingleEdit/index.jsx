@@ -1,6 +1,7 @@
 import React from 'react';
 import html2canvas from 'html2canvas';
 import { connect } from 'react-redux';
+import Back from '@components/Back';
 import styles from './style.less';
 
 const dataURLtoBlob = (dataurl) => {
@@ -69,6 +70,9 @@ class SingleEdit extends React.Component {
             });
         }
     }
+    goBack() {
+        this.props.history.goBack();
+    }
     render() {
         const {
             img,
@@ -104,6 +108,7 @@ class SingleEdit extends React.Component {
                         </div>
                     </div>
                 </div>
+                <Back history={this.props.history} />
             </div>
         )
     }

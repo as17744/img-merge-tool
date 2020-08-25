@@ -37,6 +37,7 @@ var config = {
     mainFiles: ['index'],
     alias: {
       '@redux': path.resolve(__dirname, '../redux'),
+      '@components': path.resolve(__dirname, '../components'),
     },
   },
 };

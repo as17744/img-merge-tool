@@ -33,17 +33,4 @@ module.exports = async (ctx, next) => {
         name,
         message: '上传成功'
     };
-    // formImage().then((files) => {
-    //     console.log(files);
-    //     console.log(123);
-    //     ctx.body = {
-    //         success: true,
-    //         message: '上传成功'
-    //     };
-    // }).catch(() => {
-    //     ctx.body = {
-    //         success: false,
-    //         text: '上传失败'
-    //     };
-    // })
 };

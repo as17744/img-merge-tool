@@ -4,24 +4,20 @@ var BUILD_DIR = path.resolve(__dirname, '../build');
 
 var config = {
   entry: './src/index.jsx',	// 入口
-  mode: 'development',
+  mode: 'production',
   module: {
     rules: [
         {
             test: /\.(js|jsx)$/, // 编译后缀为js和jsx格式文件
             exclude: /node_modules/,
-            use: {
-              loader: "babel-loader", // 使用babel-loader这个loader库
-            }
+            use: ['thread-loader', 'babel-loader']
         },
         {
           test: /\.less$/,
           use: ['style-loader', {
             loader: 'css-loader',
             options: {
-              modules:{
-                localIdentName: "[path][name]-[local]-[hash:5]",
-              }
+              modules: true
             }
           }, 'less-loader'],
           exclude: /node_modules/

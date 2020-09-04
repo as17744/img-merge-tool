@@ -1,0 +1,62 @@
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .confirm {
+        border-radius: 8px;
+        padding: 10px 20px;
+        background-color: #890889;
+        color: #fff;
+        font-size: 15px;
+        margin-right: 10px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .upload {
+        width: 50px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .picNumWrapper {
+        margin-top: 5px;
+    }
+    .uploadUnput {
+        display: none;
+    }
+    .uploadedShowWrapper {
+        width: 100%;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    .snapshot {
+        width: 200px;
+    }
+    .uploadedItem:first-child {
+        margin-right: 8px;
+    }
+    .uploadedItem {
+        position: relative;
+        i {
+            display: none;
+        }
+        &:hover {
+            i {
+                display: block;
+            }
+        }
+    }
+    .closeIcon {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

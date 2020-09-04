@@ -22,7 +22,7 @@ const dataURLtoBlob = (dataurl) => {
 
 const mapStateToProps = (state) => {
     return {
-        ...state,
+        ...state.singleReducer,
     };
 };
 

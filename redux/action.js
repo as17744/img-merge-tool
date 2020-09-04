@@ -4,3 +4,10 @@ export const setImage = (url) => {
         url,
     };
 };
+
+export const setDoubleImages = (list) => {
+    return {
+        type: 'setDouble',
+        list,
+    }
+};

@@ -1,3 +1,5 @@
+import { combineReducers } from 'redux';
+
 const singleReducer = (state = {
     img: '',
 }, action) => {
@@ -10,4 +12,18 @@ const singleReducer = (state = {
     return state;
 };
 
-export default singleReducer;
+const doubleReducer = (state = {
+    list: [],
+}, action) => {
+    if (action.type === 'setDouble') {
+        return {
+            list: action.list,
+        };
+    }
+    return state;
+}
+
+export default combineReducers({
+    singleReducer,
+    doubleReducer,
+});

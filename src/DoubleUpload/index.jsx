@@ -57,9 +57,11 @@ class DoubleUpload extends React.Component {
         });
     }
     confirmImg() {
+        const { history } = this.props;
         const { setDouble } = this.props;
         const { list } = this.state;
         setDouble(list);
+        history.push('/double/edit');
     }
     render() {
         const { list } = this.state;

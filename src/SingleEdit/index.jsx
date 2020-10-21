@@ -37,8 +37,23 @@ class SingleEdit extends React.Component {
     download() {
         const $img = document.getElementById('J-img');
         if ($img) {
-            html2canvas($img, {useCORS: true}).then((canvas) => {
-                const imgUri = canvas.toDataURL();
+            const scaleBy = 5;
+            const { width: w, height: h } = $img.getBoundingClientRect();
+            const $canvas = document.createElement('canvas');
+            const cw = w * scaleBy;
+            const ch = h * scaleBy;
+            $canvas.width = cw;
+            $canvas.height = ch;
+            $canvas.style.width = cw + 'px';
+            $canvas.style.height = ch + 'px';
+            const context = $canvas.getContext('2d');
+            context.scale(scaleBy, scaleBy);
+            html2canvas($img, {
+                canvas: $canvas,
+                useCORS: true,
+                scale: 1,
+            }).then((canvas) => {
+                const imgUri = canvas.toDataURL('image/jpeg');
                 const blob = dataURLtoBlob(imgUri); // base64转blob
                 const form = new FormData();
                 form.append('filedata', blob);
